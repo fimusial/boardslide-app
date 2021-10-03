@@ -1,1 +1,78 @@
-/* You can add global styles to this file, and also import other style files */
+/* defaults */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
+body {
+    min-width: 400px;
+}
+
+/* fonts */
+html, body {
+    font-family: Andale Mono, monospace;
+    font-size: large;
+}
+
+.font-x-large {
+    font-size: x-large;
+}
+
+.font-xx-large {
+    font-size: xx-large;
+}
+
+/* colors */
+:root {
+    --primary-color: #ff4aa2;
+    --secondary-color: #afafaf;
+    --text-color: #292929;
+}
+
+body {
+    color: var(--text-color);
+}
+
+.bg-primary {
+    background-color: var(--primary-color);
+}
+
+/* breakpoints */
+:root {
+    --mobile: 700px;
+}
+
+/* spacing */
+.w100 {
+    width: 100%;
+}
+
+.p10 {
+    padding: 10px;
+}
+
+/* flex */
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+/* mobile */
+@media only screen and (max-width: 700px) {
+    body {
+        /* background-color: red; */
+    }
+}
