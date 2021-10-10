@@ -1,0 +1,10 @@
+#textSpan:hover {
+    background-color: var(--primary-color);
+}
+
+#textInput {
+    background-color: var(--primary-color);
+}
+    #textInput:focus {
+        outline: none;
+    }

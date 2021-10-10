@@ -5,11 +5,23 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { DashComponent } from './dash/dash.component';
+import { TruncPipe } from './shared/pipes/trunc.pipe';
+import { ButtonComponent } from './core-components/button/button.component';
+import { LoaderComponent } from './core-components/loader/loader.component';
+import { AutoFocusDirective } from './shared/directives/auto-focus.directive';
+import { SpanAndInputComponent } from './core-components/span-and-input/span-and-input.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    ButtonComponent,
+    LoaderComponent,
+    SpanAndInputComponent,
+    NavbarComponent,
+    DashComponent,
+    TruncPipe,
+    AutoFocusDirective,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,15 @@
+<h1 *ngIf="initialDelayPassed" class="w100 vh71 flex-row justify-center align-center">
+    <ng-container>
+        <span [ngClass]="{ 'text-primary': led[0] }">L</span>
+        <span [ngClass]="{ 'text-primary': led[1] }">o</span>
+        <span [ngClass]="{ 'text-primary': led[2] }">a</span>
+        <span [ngClass]="{ 'text-primary': led[3] }">d</span>
+        <span [ngClass]="{ 'text-primary': led[4] }">i</span>
+        <span [ngClass]="{ 'text-primary': led[5] }">n</span>
+        <span [ngClass]="{ 'text-primary': led[6] }">g</span>
+        <span [ngClass]="{ 'text-primary': led[7] }">.</span>
+        <span [ngClass]="{ 'text-primary': led[8] }">.</span>
+        <span [ngClass]="{ 'text-primary': led[9] }">.</span>
+    </ng-container>
+</h1>
+<ng-content *ngIf="!initialDelayPassed"></ng-content>

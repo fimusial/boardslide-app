@@ -1,0 +1,11 @@
+button {
+    border: var(--standard-border-width) solid var(--primary-color);
+    border-radius: var(--standard-border-radius);
+    text-align: center;
+    box-shadow: 6px 6px var(--secondary-color);
+}
+
+    button:hover {
+        transform: translate(3px, 3px);
+        box-shadow: 3px 3px var(--secondary-color);
+    }

@@ -1,0 +1,14 @@
+<span *ngIf="!editing"
+    (click)="startEditing()"
+    id="textSpan">
+    {{ text | trunc }}
+</span>
+<span *ngIf="editing"
+    contenteditable
+    bsAutoFocus
+    (focusout)="stopEditing()"
+    (keydown.enter)="stopEditing()"
+    (input)="onInput($event)"
+    type="text"
+    id="textInput">
+</span>

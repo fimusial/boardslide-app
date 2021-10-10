@@ -1,3 +1,11 @@
 nav {
     border-bottom: solid var(--secondary-color) 4px;
 }
+
+a {
+    color: var(--text-color);
+}
+
+a:hover {
+    color: white;
+}
