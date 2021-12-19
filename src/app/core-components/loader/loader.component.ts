@@ -15,10 +15,10 @@ export class LoaderComponent implements OnChanges, OnDestroy {
 
     public ngOnChanges(): void {
         if (this.loading === true) {
-            this.subscriptions.push(interval(500).pipe(take(1)).subscribe(_ => {
+            this.subscriptions.push(interval(250).pipe(take(1)).subscribe(_ => {
                 this.initialDelayPassed = true;
             }));
-            this.subscriptions.push(interval(50).subscribe(i => {
+            this.subscriptions.push(interval(100).subscribe(i => {
                 this.resetLed();
                 this.led[i % this.led.length] = true;
             }));
