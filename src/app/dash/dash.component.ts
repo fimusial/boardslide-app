@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { BoardsRestService } from "../shared/services/boards-rest.service";
-import { Board } from "./shared/board";
+import { Board } from "./board";
 
 @Component({
     selector: 'bs-dash',
