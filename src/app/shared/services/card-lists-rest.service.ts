@@ -4,8 +4,8 @@ import { Observable } from "rxjs";
 import { ApiRoutes, populateUrl } from "../api-contracts/api-routes";
 import { CardListForCreationDto } from "../api-contracts/dtos/card-lists/card-list-for-creation-dto";
 import { CardListForUpdateDto } from "../api-contracts/dtos/card-lists/card-list-for-update-dto";
-import { CardListResponse } from "../api-contracts/responses/card-lists/card-list-info-response";
-import { CardListInfoResponse } from "../api-contracts/responses/card-lists/card-list-response";
+import { CardListInfoResponse } from "../api-contracts/responses/card-lists/card-list-info-response";
+import { CardListResponse } from "../api-contracts/responses/card-lists/card-list-response";
 
 @Injectable({ providedIn: 'root' })
 export class CardListsRestService {

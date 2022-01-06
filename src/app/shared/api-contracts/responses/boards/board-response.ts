@@ -1,4 +1,4 @@
-import { CardListResponse } from "../card-lists/card-list-info-response";
+import { CardListResponse } from "../card-lists/card-list-response";
 
 export class BoardResponse {
     public id: number;

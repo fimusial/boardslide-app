@@ -17,10 +17,10 @@ export class LoaderComponent implements OnChanges, OnDestroy {
         if (this.loading === true) {
             this.subscriptions.push(interval(250).pipe(take(1)).subscribe(_ => {
                 this.initialDelayPassed = true;
-            }));
-            this.subscriptions.push(interval(100).subscribe(i => {
-                this.resetLed();
-                this.led[i % this.led.length] = true;
+                this.subscriptions.push(interval(100).subscribe(i => {
+                    this.resetLed();
+                    this.led[i % this.led.length] = true;
+                }));
             }));
         }
         else {
