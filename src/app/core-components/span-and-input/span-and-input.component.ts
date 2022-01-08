@@ -12,6 +12,7 @@ export class SpanAndInputComponent {
     @Input() public maxLength = 255;
     @Input() public allowEmpty = false;
     @Input() public text = '';
+    @Input() public truncText = true;
     @Output() public editingFinished = new EventEmitter<string>();
 
     public startEditing(): void {

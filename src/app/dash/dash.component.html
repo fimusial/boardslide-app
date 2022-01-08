@@ -2,18 +2,18 @@
     <ng-container *ngIf="boards">
         <div class="w100 flex-col align-center">
             <div class="w71 mt20 flex-row justify-center" *ngFor="let board of boards">
-                <bs-button class="w71 mr40" [primary]="false">
-                    <span>{{ '[' + board.id + '] ' }}</span>
+                <bs-button class="w71 mr40" [primary]="false" [fillWidth]="true" (click)="navigateToBoardOverview(board.id)">
+                    <span>{{ board.id | idPrefix }}</span>
                     <bs-span-and-input
                         [text]="board.name"
                         [maxLength]="32"
                         (editingFinished)="onBoardNameEditingFinished(board, $event)">
                     </bs-span-and-input>
                 </bs-button>
-                <bs-button [primary]="false" (click)="deleteBoard(board.id)">-</bs-button>
+                <bs-button [primary]="false" [fillWidth]="true" (click)="deleteBoard(board.id)">-</bs-button>
             </div>
             <div class="w71 mt20 flex-row justify-center">
-                <bs-button (click)="createBoard()">+</bs-button>
+                <bs-button [fillWidth]="true" (click)="createBoard()">+</bs-button>
             </div>
         </div>
     </ng-container>

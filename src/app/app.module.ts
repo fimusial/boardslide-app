@@ -11,6 +11,9 @@ import { ButtonComponent } from './core-components/button/button.component';
 import { LoaderComponent } from './core-components/loader/loader.component';
 import { AutoFocusDirective } from './shared/directives/auto-focus.directive';
 import { SpanAndInputComponent } from './core-components/span-and-input/span-and-input.component';
+import { BoardOverviewComponent } from './board-overview/board-overview.component';
+import { ColumnComponent } from './board-overview/column/column.component';
+import { IdPrefixPipe } from './shared/pipes/id-prefix.pipe';
 
 @NgModule({
   declarations: [
@@ -20,8 +23,11 @@ import { SpanAndInputComponent } from './core-components/span-and-input/span-and
     SpanAndInputComponent,
     NavbarComponent,
     DashComponent,
+    BoardOverviewComponent,
+    ColumnComponent,
     TruncPipe,
-    AutoFocusDirective,
+    IdPrefixPipe,
+    AutoFocusDirective
   ],
   imports: [
     BrowserModule,

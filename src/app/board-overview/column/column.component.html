@@ -1,0 +1,20 @@
+<div id="outer">
+    <div id="header-piece" class="p10">
+        <h1 class="font-x-large">
+            <span>{{ cardList.id | idPrefix }}</span>
+            <bs-span-and-input
+                [text]="cardList.name"
+                [maxLength]="32"
+                [truncText]="false"
+                (editingFinished)="onCardListNameEditingFinished(cardList, $event)">
+            </bs-span-and-input>
+        </h1>
+    </div>
+    
+    <!-- card -->
+    <div style="min-width: 100px; padding: 10px;">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Integer iaculis commodo porta.
+        Quisque in mauris scelerisque, molestie dui quis, ornare nunc.
+    </div>
+</div>

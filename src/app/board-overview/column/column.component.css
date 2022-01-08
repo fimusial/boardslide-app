@@ -1,0 +1,21 @@
+#outer {
+    border: var(--standard-border-width) solid var(--primary-color);
+    border-radius: var(--standard-border-radius);
+    box-shadow: 6px 6px var(--secondary-color);
+    max-width: 711px;
+    min-height: 80vh;
+}
+
+#header-piece {
+    background-color: var(--secondary-light-color);
+    border-top-left-radius: var(--inner-fill-border-radius);
+    border-top-right-radius: var(--inner-fill-border-radius);
+}
+
+/* mobile */
+@media only screen and (max-width: 1415px) {
+    #outer {
+        max-width: none;
+        min-height: auto;
+    }
+}

@@ -1,6 +1,5 @@
 /* defaults */
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
     overflow-wrap: break-word;
@@ -51,7 +50,9 @@ html, body {
 :root {
     --primary-color: #ff4aa2;
     --secondary-color: #afafaf;
-    --text-color: rgb(51, 14, 41);
+    --secondary-light-color: #e2e2e2;
+    /* --text-color: #330e29; */
+    --text-color: black;
 }
 
 body {
@@ -71,10 +72,15 @@ body {
 :root {
     --standard-border-width: 4px;
     --standard-border-radius: 20px;
+    --inner-fill-border-radius: 16px;
 }
 
 .w100 {
     width: 100%;
+}
+
+.h100 {
+    height: 100%;
 }
 
 .w71 {
@@ -107,6 +113,18 @@ body {
 
 .mr40 {
     margin-right: 40px;
+}
+
+.mr20 {
+    margin-right: 20px;
+}
+
+.ml40 {
+    margin-left: 40px;
+}
+
+.ml20 {
+    margin-left: 20px;
 }
 
 .vh71 {
@@ -152,10 +170,10 @@ body {
     }
     
     .font-x-large {
-        font-size: small;
+        font-size: medium;
     }
     
     .font-xx-large {
-        font-size: small;
+        font-size: medium;
     }
 }

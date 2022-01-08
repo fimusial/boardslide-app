@@ -1,0 +1,17 @@
+<bs-loader [loading]="loading">
+    <ng-container *ngIf="board">
+        <h1 class="w100 mt20 font-xx-large text-center">
+            <span>{{ board.id | idPrefix }}</span>
+            <span>{{ board.name }}</span>
+        </h1>
+        <div id="columns" class="w100 mt20">
+            <ng-container *ngFor="let cardList of board.cardLists; let last = last;">
+                <bs-column class="column"
+                    [boardId]="board.id"
+                    [cardList]="cardList">
+                </bs-column>
+            </ng-container>
+            <bs-button class="ml20 mr20" [primary]="true" [fillHeight]="true" [fillWidth]="true">+</bs-button>
+        </div>
+    </ng-container>
+</bs-loader>

@@ -1,7 +1,7 @@
 <span *ngIf="!editing"
     (click)="startEditing()"
     id="textSpan">
-    {{ text | trunc }}
+    {{ truncText ? (text | trunc) : text }}
 </span>
 <span *ngIf="editing"
     contenteditable

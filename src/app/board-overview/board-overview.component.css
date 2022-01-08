@@ -1,0 +1,29 @@
+#columns {
+    display: flex;
+    flex-direction: row;
+}
+
+.column {
+    margin-left: 20px;
+}
+
+.column:last-child {
+    margin-right: 20px;
+}
+
+::ng-deep button {
+    box-sizing: border-box;
+}
+
+/* mobile */
+@media only screen and (max-width: 1415px) {
+    #columns {
+        flex-direction: column;
+    }
+
+    .column {
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-bottom: 20px;
+    }
+}

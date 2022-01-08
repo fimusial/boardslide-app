@@ -45,4 +45,8 @@ export class DashComponent implements OnInit {
         board.name = text;
         this.boardsService.update(board.id, { name: board.name }).subscribe();
     }
+
+    public navigateToBoardOverview(boardId: number): void {
+        // todo: routing
+    }
 }
