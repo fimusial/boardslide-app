@@ -1,8 +1,9 @@
 <span *ngIf="!editing"
     (click)="startEditing()"
     id="textSpan">
-    {{ truncText ? (text | trunc) : text }}
+    {{ text }}
 </span>
+<span *ngIf="editing">{{ hint }}</span>
 <span *ngIf="editing"
     contenteditable
     bsAutoFocus

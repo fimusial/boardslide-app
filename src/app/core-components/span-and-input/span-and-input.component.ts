@@ -9,10 +9,10 @@ export class SpanAndInputComponent {
     public editing = false;
     private editingText = '';
 
+    @Input() public text = '';
+    @Input() public hint = 'insert text:';
     @Input() public maxLength = 255;
     @Input() public allowEmpty = false;
-    @Input() public text = '';
-    @Input() public truncText = true;
     @Output() public editingFinished = new EventEmitter<string>();
 
     public startEditing(): void {

@@ -4,4 +4,5 @@
 
 #textInput:focus {
     outline: none;
+    word-break: break-all;
 }

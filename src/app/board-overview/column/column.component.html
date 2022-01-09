@@ -1,11 +1,11 @@
 <div id="outer">
     <div id="header-piece" class="p10">
         <h6>
-            <span>{{ cardList.id | idPrefix }}</span>
+            <!-- <span>{{ cardList.id | idPrefix }}</span> -->
             <bs-span-and-input
                 [text]="cardList.name"
+                [hint]="'column name:'"
                 [maxLength]="32"
-                [truncText]="false"
                 (editingFinished)="onCardListNameEditingFinished(cardList, $event)">
             </bs-span-and-input>
         </h6>
