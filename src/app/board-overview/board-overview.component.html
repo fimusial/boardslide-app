@@ -2,16 +2,29 @@
     <ng-container *ngIf="board">
         <h1 class="w100 mt20 text-center">
             <!-- <span>{{ board.id | idPrefix }}</span> -->
-            <span>{{ board.name }}</span>
+            <bs-span-and-input
+                [text]="board.name"
+                [hint]="'board name:'"
+                [maxLength]="32"
+                (editingFinished)="onBoardNameEditingFinished($event)">
+            </bs-span-and-input>
         </h1>
         <div id="columns" class="w100 mt20">
             <ng-container *ngFor="let cardList of board.cardLists; let last = last;">
-                <bs-column class="column"
+                <bs-column class="column ml20"
                     [boardId]="board.id"
-                    [cardList]="cardList">
+                    [cardList]="cardList"
+                    (cardListDeleted)="onCardListDeleted($event)">
                 </bs-column>
             </ng-container>
-            <bs-button class="ml20 mr20" [primary]="true" [fillHeight]="true" [fillWidth]="true">+</bs-button>
+            <bs-button *ngIf="board.cardLists.length < 5"
+                class="ml20 mr20"
+                [primary]="true"
+                [fillHeight]="true"
+                [fillWidth]="true"
+                (click)="addCardList()">
+                +
+            </bs-button>
         </div>
     </ng-container>
 </bs-loader>

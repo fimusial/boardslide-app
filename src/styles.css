@@ -51,6 +51,8 @@ h6 {
     --primary-color: #ff4aa2;
     --secondary-color: #afafaf;
     --secondary-light-color: #e2e2e2;
+    --danger-primary-color: #ffe46e;
+    --danger-secondary-color: #ffd000;
     /* --text-color: #330e29; */
     --text-color: black;
 }
@@ -72,7 +74,7 @@ body {
 :root {
     --standard-border-width: 4px;
     --standard-border-radius: 20px;
-    --inner-fill-border-radius: 16px;
+    --inner-fill-border-radius: 15px;
 }
 
 .w100 {

@@ -1,4 +1,5 @@
 import { BoardResponse } from "../shared/api-contracts/responses/boards/board-response";
+import { CardListInfoResponse } from "../shared/api-contracts/responses/card-lists/card-list-info-response";
 import { CardListResponse } from "../shared/api-contracts/responses/card-lists/card-list-response";
 import { CardResponse } from "../shared/api-contracts/responses/cards/card-response";
 
@@ -27,7 +28,16 @@ export class OverviewCardList {
         cardList.id = cardListResponse.id;
         cardList.name = cardListResponse.name;
         cardList.boardId = cardListResponse.boardId;
-        cardList.cards = cardListResponse.cards.map(card => OverviewCard.fromCardResponse(card));
+        cardList.cards = cardListResponse.cards.map(card => OverviewCard.fromCardResponse(card)).sort((x, y) => x.sortOrder - y.sortOrder);
+        return cardList;
+    }
+
+    public static fromCardListInfoResponse(cardListInfoResponse: CardListInfoResponse): OverviewCardList {
+        const cardList = new OverviewCardList();
+        cardList.id = cardListInfoResponse.id;
+        cardList.name = cardListInfoResponse.name;
+        cardList.boardId = cardListInfoResponse.boardId;
+        cardList.cards = [];
         return cardList;
     }
 }

@@ -6,15 +6,19 @@
                 [text]="cardList.name"
                 [hint]="'column name:'"
                 [maxLength]="32"
-                (editingFinished)="onCardListNameEditingFinished(cardList, $event)">
+                (editingFinished)="onCardListNameEditingFinished($event)">
             </bs-span-and-input>
         </h6>
     </div>
     
     <!-- card -->
-    <div style="min-width: 100px; padding: 10px;">
+    <div id="middle-piece" style="min-width: 100px; padding: 10px; height: 100%">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Integer iaculis commodo porta.
         Quisque in mauris scelerisque, molestie dui quis, ornare nunc.
+    </div>
+
+    <div id="footer-piece" class="p10" (click)="deleteCardList()">
+        <h6 class="text-center">-</h6>
     </div>
 </div>

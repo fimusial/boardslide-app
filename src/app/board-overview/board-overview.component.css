@@ -1,10 +1,9 @@
 #columns {
     display: flex;
     flex-direction: row;
-}
-
-.column {
-    margin-left: 20px;
+    overflow-x: scroll;
+    overflow-y: visible;
+    padding-bottom: 20px;
 }
 
 .column:last-child {
@@ -16,13 +15,15 @@
 }
 
 /* mobile */
-@media only screen and (max-width: 1415px) {
+@media only screen and (max-width: 800px) {
     #columns {
         flex-direction: column;
+        margin-bottom: 20px;
+        overflow-x: auto;
+        overflow-y: auto;
     }
 
     .column {
-        margin-left: 20px;
         margin-right: 20px;
         margin-bottom: 20px;
     }

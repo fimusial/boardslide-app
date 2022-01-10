@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BoardsRestService } from 'src/app/shared/services/boards-rest.service';
 import { CardListsRestService } from 'src/app/shared/services/card-lists-rest.service';
 import { CardsRestService } from 'src/app/shared/services/cards-rest.service';
-import { OverviewBoard } from './overview-board';
+import { OverviewBoard, OverviewCardList } from './overview-board';
 
 @Component({
     selector: 'bs-board-overview',
@@ -10,7 +10,6 @@ import { OverviewBoard } from './overview-board';
     styleUrls: ['./board-overview.component.css']
 })
 export class BoardOverviewComponent implements OnInit {
-    public boardId: number;
     public board: OverviewBoard;
     public loading: boolean;
 
@@ -21,11 +20,33 @@ export class BoardOverviewComponent implements OnInit {
     ) {}
 
     ngOnInit(): void {
-        this.boardId = 73; // todo: routing
+        const boardId = 73; // todo: routing
         this.loading = true;
-        this.boardsService.getById(this.boardId).subscribe(board => {
+        this.boardsService.getById(boardId).subscribe(board => {
             this.board = OverviewBoard.fromBoardResponse(board);
             this.loading = false;
+        });
+    }
+
+    public onBoardNameEditingFinished(text: string): void {
+        this.board.name = text;
+        this.boardsService.update(this.board.id, { name: text }).subscribe();
+    }
+
+    public addCardList(): void {
+        this.loading = true;
+        this.cardListsService.create(this.board.id, { name: 'new card list' }).subscribe(cardList => {
+            this.loading = false;
+            this.board.cardLists.push(OverviewCardList.fromCardListInfoResponse(cardList));
+        });
+    }
+
+    public onCardListDeleted(cardListId: number): void {
+        this.loading = true;
+        this.cardListsService.delete(this.board.id, cardListId).subscribe(_ => {
+            this.loading = false;
+            const index = this.board.cardLists.findIndex(x => x.id === cardListId);
+            this.board.cardLists.splice(index, 1);
         });
     }
 }
