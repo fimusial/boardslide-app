@@ -20,7 +20,7 @@ export class BoardOverviewComponent implements OnInit {
     ) {}
 
     ngOnInit(): void {
-        const boardId = 73; // todo: routing
+        const boardId = 1; // todo: routing
         this.loading = true;
         this.boardsService.getById(boardId).subscribe(board => {
             this.board = OverviewBoard.fromBoardResponse(board);
@@ -35,7 +35,7 @@ export class BoardOverviewComponent implements OnInit {
 
     public addCardList(): void {
         this.loading = true;
-        this.cardListsService.create(this.board.id, { name: 'new card list' }).subscribe(cardList => {
+        this.cardListsService.create(this.board.id, { name: 'new column' }).subscribe(cardList => {
             this.loading = false;
             this.board.cardLists.push(OverviewCardList.fromCardListInfoResponse(cardList));
         });

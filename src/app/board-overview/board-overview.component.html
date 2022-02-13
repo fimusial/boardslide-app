@@ -1,7 +1,11 @@
 <bs-loader [loading]="loading">
-    <ng-container *ngIf="board">
+    <ng-container *ngIf="board && board.cardLists.length === 0">
         <h1 class="w100 mt20 text-center">
-            <!-- <span>{{ board.id | idPrefix }}</span> -->
+            this board is empty, try <a href="" (click)="addCardList()">adding a column</a>
+        </h1>
+    </ng-container>
+    <ng-container *ngIf="board && board.cardLists.length > 0">
+        <h1 class="w100 mt20 text-center">
             <bs-span-and-input
                 [text]="board.name"
                 [hint]="'board name:'"
