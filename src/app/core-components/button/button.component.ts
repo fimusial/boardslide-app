@@ -9,4 +9,5 @@ export class ButtonComponent {
     @Input() public primary = true;
     @Input() public fillWidth = false;
     @Input() public fillHeight = false;
+    @Input() public borderBox = false;
 }

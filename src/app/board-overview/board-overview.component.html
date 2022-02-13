@@ -1,7 +1,7 @@
 <bs-loader [loading]="loading">
     <ng-container *ngIf="board && board.cardLists.length === 0">
         <h1 class="w100 mt20 text-center">
-            this board is empty, try <a href="" (click)="addCardList()">adding a column</a>
+            this board is empty, <bs-button (click)="addCardList()">add a column</bs-button>
         </h1>
     </ng-container>
     <ng-container *ngIf="board && board.cardLists.length > 0">
@@ -26,6 +26,7 @@
                 [primary]="true"
                 [fillHeight]="true"
                 [fillWidth]="true"
+                [borderBox]="true"
                 (click)="addCardList()">
                 +
             </bs-button>

@@ -10,10 +10,6 @@
     margin-right: 20px;
 }
 
-::ng-deep button {
-    box-sizing: border-box;
-}
-
 /* mobile */
 @media only screen and (max-width: 800px) {
     #columns {

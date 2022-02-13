@@ -1,5 +1,5 @@
 <span *ngIf="!editing"
-    (click)="startEditing()"
+    (click)="$event.stopPropagation();startEditing()"
     id="textSpan">
     {{ text }}
 </span>

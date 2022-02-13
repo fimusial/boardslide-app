@@ -81,6 +81,10 @@ body {
     --inner-fill-border-radius: 15px;
 }
 
+.border-box {
+    box-sizing: border-box;
+}
+
 .w100 {
     width: 100%;
 }

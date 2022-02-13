@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { BoardsRestService } from 'src/app/shared/services/boards-rest.service';
 import { CardListsRestService } from 'src/app/shared/services/card-lists-rest.service';
 import { CardsRestService } from 'src/app/shared/services/cards-rest.service';
@@ -17,14 +18,16 @@ export class BoardOverviewComponent implements OnInit {
         public boardsService: BoardsRestService,
         public cardListsService: CardListsRestService,
         public cardsService: CardsRestService,
+        public route: ActivatedRoute
     ) {}
 
     ngOnInit(): void {
-        const boardId = 1; // todo: routing
-        this.loading = true;
-        this.boardsService.getById(boardId).subscribe(board => {
-            this.board = OverviewBoard.fromBoardResponse(board);
-            this.loading = false;
+        this.route.params.subscribe(params => {
+            this.loading = true;
+            this.boardsService.getById(params.id).subscribe(board => {
+                this.board = OverviewBoard.fromBoardResponse(board);
+                this.loading = false;
+            });
         });
     }
 

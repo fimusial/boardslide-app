@@ -1,8 +1,11 @@
-<button [ngClass]="{
+<button
+    (keyup)="$event.preventDefault()"
+    [ngClass]="{
     'w100': fillWidth,
     'h100': fillHeight,
     'p10': true,
-    'bg-primary': primary
+    'bg-primary': primary,
+    'border-box': borderBox
     }">
     <h6 [ngClass]="{
         'text-white': primary

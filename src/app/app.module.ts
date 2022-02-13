@@ -14,10 +14,13 @@ import { SpanAndInputComponent } from './core-components/span-and-input/span-and
 import { BoardOverviewComponent } from './board-overview/board-overview.component';
 import { ColumnComponent } from './board-overview/column/column.component';
 import { IdPrefixPipe } from './shared/pipes/id-prefix.pipe';
+import { AppRoutingModule } from './app-routing.module';
+import { NothingHereComponent } from './nothing-here/nothing-here.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    NothingHereComponent,
     ButtonComponent,
     LoaderComponent,
     SpanAndInputComponent,
@@ -32,7 +35,8 @@ import { IdPrefixPipe } from './shared/pipes/id-prefix.pipe';
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
